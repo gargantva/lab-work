@@ -1,0 +1,25 @@
+server:
+  port: 8888
+spring:
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/sea?useSSL=false&useUnicode=true&characterEncoding=utf8
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-timeout: 20000
+      minimum-idle: 3
+      maximum-pool-size: 10
+      idle-timeout: 30000
+      max-lifetime: 1200000
+      connection-test-query: SELECT 1
+      auto-commit: true
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
